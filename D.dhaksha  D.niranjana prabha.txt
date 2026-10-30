@@ -1,0 +1,199 @@
+﻿
+
+
+BANK MANAGEMENT SYSTEM
+Web-Based Banking Application
+
+PROJECT REPORT
+
+
+Submitted by:
+[Your Name]
+[Degree / Department]
+[College Name]
+[Academic Year]
+
+
+TABLE OF CONTENTS
+1. Introduction
+2. Abstract
+3. Problem Statement
+4. Objectives of the Project
+5. Existing System
+6. Proposed System
+7. System Requirements
+8. System Architecture
+9. Technologies Used
+10. Frontend Development
+11. Backend Development
+12. Database Management
+13. Main Modules
+14. System Workflow
+15. Security Features
+16. System Testing
+17. Advantages of the System
+18. Limitations
+19. Future Enhancements
+20. Conclusion
+21. References
+
+
+1. INTRODUCTION
+Banking is an important part of everyday life. Customers use banks to keep money safely, check account balances, transfer funds and review transactions. Traditional banking often requires customers to visit a branch or depend on separate services to complete simple tasks. A web-based Bank Management System can make basic banking operations easier by providing a single interface for account-related activities.
+The Bank Management System is a full-stack web application designed to demonstrate common banking functions. Users can register, log in, view a dashboard, check account details, deposit money, withdraw money and view transaction history. The frontend provides a simple interface, while the backend validates requests and processes transactions. A database stores user, account and transaction records.
+This project is intended as an educational prototype. It demonstrates the connection between frontend pages, backend APIs and a database. It is not a production banking platform and should not be used to store real money or sensitive financial information.
+2. ABSTRACT
+The Bank Management System is a web-based application developed to organise basic banking operations in one place. The proposed application includes user registration and login, dashboard display, deposit, withdrawal, balance enquiry and transaction history. It aims to reduce manual record handling, improve the speed of routine operations and present account information in a clear format.
+The frontend can be developed using HTML, CSS and JavaScript. A Node.js and Express backend can receive requests, validate input and apply banking rules. A database such as MySQL can store user profiles, account balances and transaction records. The system follows a client-server model: users interact with web pages, the backend processes the request, and the database stores or retrieves the required information.
+The project provides a foundation for learning full-stack development, form validation, API communication, database design and basic security practices. Features such as secure authentication, audit logs, role-based access and stronger transaction controls can be added as the project develops.
+3. PROBLEM STATEMENT
+Manual or disconnected methods of managing account information can make it difficult to find records quickly, track transactions and maintain consistent data. Repeated data entry can also cause mistakes. A centralised application is needed to demonstrate how account operations can be organised through a user-friendly interface.
+* Account information may be scattered across different records or pages.
+* Users may not have a convenient way to view recent transactions in one place.
+* Manual calculations can lead to balance errors.
+* Without validation, incorrect amounts or incomplete form details may be submitted.
+* Separating the interface, processing logic and database is necessary for a maintainable application.
+4. OBJECTIVES OF THE PROJECT
+* To develop a simple and user-friendly web-based banking application.
+* To provide registration and login pages for users.
+* To display account details and available balance on a dashboard.
+* To support deposit and withdrawal operations in the project environment.
+* To record each successful operation in transaction history.
+* To validate user input and prevent invalid transaction amounts.
+* To connect frontend pages with a backend server through APIs.
+* To store and retrieve account and transaction information from a database.
+* To demonstrate basic authentication, access control and error handling.
+5. EXISTING SYSTEM
+In a basic manual or disconnected system, account details and transaction records may be maintained through paper documents, spreadsheets or separate applications. Such approaches can be suitable for small demonstrations, but they can become difficult to manage as the number of records increases.
+Drawbacks of the Existing System
+* Searching for previous transactions can take extra time.
+* Repeated manual entry may introduce mistakes.
+* Balance calculations require careful checking.
+* Records may not be available in one centralised view.
+* Input validation and access control may be inconsistent.
+* Reports and transaction summaries may require manual preparation.
+6. PROPOSED SYSTEM
+The proposed Bank Management System brings basic account activities together in a web application. A user registers or logs in and accesses a dashboard. From the dashboard, the user can view account information, make a deposit or withdrawal in the demonstration environment, and review transaction history. The backend checks the request and updates the database only when the operation is valid.
+Key Features
+* User registration and login.
+* Dashboard with account summary and balance.
+* Deposit form with amount validation.
+* Withdrawal form with sufficient-balance validation.
+* Transaction history showing type, amount, date and status.
+* Clear success and error messages.
+* Centralised database storage for user, account and transaction records.
+Main Modules
+ModulePurposeUser ManagementRegisters users, verifies login details and manages basic profile information.DashboardDisplays the account summary and links to banking functions.DepositAccepts a valid positive amount and records a deposit transaction.WithdrawalChecks the requested amount and available balance before recording a withdrawal.Transaction HistoryDisplays previous account activities in date order.Backend APIReceives frontend requests, validates data and applies business rules.DatabaseStores users, accounts and transaction records.7. SYSTEM REQUIREMENTS
+Hardware Requirements
+* Processor: Intel Core i3 or equivalent.
+* RAM: 4 GB minimum; 8 GB recommended.
+* Storage: At least 1 GB of free space for project files and development tools.
+* Display: 1366 × 768 resolution or higher.
+* Network: Internet or local network access where required.
+Software Requirements
+* Operating System: Windows 10/11, Linux or macOS.
+* Frontend: HTML5, CSS3 and JavaScript.
+* Backend: Node.js with Express.js.
+* Database: MySQL (or another configured relational database).
+* Code Editor: Visual Studio Code.
+* Browser: Google Chrome, Microsoft Edge or Firefox.
+* Testing Tools: Browser developer tools and Postman or a similar API client.
+8. SYSTEM ARCHITECTURE
+The application follows a three-layer client-server architecture.
+1. Presentation Layer: HTML, CSS and JavaScript pages display forms, buttons, account summaries and transaction history.
+2. Application Layer: Node.js and Express receive requests, validate input, verify permissions and apply deposit or withdrawal rules.
+3. Data Layer: The database stores user records, account balances and transaction history.
+USER / WEB BROWSER
+↓
+FRONTEND: HTML + CSS + JavaScript
+↓  HTTP requests / API responses
+BACKEND: Node.js + Express
+↓  Database queries
+DATABASE: MySQL
+For a deposit or withdrawal, the backend should perform validation and update the balance and transaction record as one database transaction. This helps avoid inconsistent records if an operation fails partway through.
+9. TECHNOLOGIES USED
+TechnologyUseHTML5Creates the structure of the web pages.CSS3Controls layout, colours, spacing and responsive design.JavaScriptAdds form interactions, client-side validation and API calls.Node.jsRuns JavaScript on the server.Express.jsDefines backend routes and handles HTTP requests.MySQLStores user, account and transaction data in relational tables.Visual Studio CodeProvides an environment for writing and managing project code.10. FRONTEND DEVELOPMENT
+The frontend is the part of the application visible to the user. Each page should have clear navigation and consistent styling. HTML defines the page structure, CSS styles the components, and JavaScript handles interactions and communicates with the backend.
+Main Pages
+* index.html - home page with a short introduction and navigation.
+* login.html - form for entering login credentials.
+* register.html - form for creating a user account.
+* dashboard.html - summary of account information and available actions.
+* deposit.html - form to enter a deposit amount.
+* withdraw.html - form to enter a withdrawal amount.
+* style.css - shared styles for the pages.
+* script.js - common frontend behaviour and API communication.
+The frontend should show clear validation messages, disable repeated submissions while a request is processing, and never treat a client-side balance as authoritative. The backend must always verify the balance and amount before saving a transaction.
+11. BACKEND DEVELOPMENT
+The backend receives requests from the frontend and performs the main application logic. Express routes can be created for registration, login, account details, deposits, withdrawals and transaction history. Each route should validate the request, check that the current user is authorised, interact with the database and return a suitable response.
+Example API Endpoints
+EndpointPurposePOST /api/registerCreate a user account after validating the submitted details.POST /api/loginVerify credentials and start an authenticated session.GET /api/accountReturn the authenticated user's account summary.POST /api/depositValidate and record a deposit.POST /api/withdrawValidate available balance and record a withdrawal.GET /api/transactionsReturn the user's transaction history.The backend should use parameterised database queries, handle errors safely and keep secrets such as database passwords in environment variables rather than directly in source code.
+12. DATABASE MANAGEMENT
+A relational database can store information in related tables. A simple design may include Users, Accounts and Transactions. Each account should have a unique identifier, and every transaction should reference the account affected by the operation.
+Suggested Tables
+TableExample FieldsUsersuser_id (primary key), full_name, email (unique), password_hash, created_atAccountsaccount_id (primary key), user_id (foreign key), account_number (unique), balance, created_atTransactionstransaction_id (primary key), account_id (foreign key), transaction_type, amount, transaction_date, status, descriptionPasswords must be stored as secure password hashes, not plain text. The balance should be updated only by the backend. Deposit and withdrawal updates should be recorded together with their transaction entry so that the account balance and history remain consistent.
+13. MAIN MODULES
+13.1 User Registration and Login
+The registration module collects the required user details and checks that fields are complete and valid. Login verifies the submitted credentials and grants access only after successful authentication. Passwords should be hashed using a suitable password-hashing library.
+13.2 Dashboard
+The dashboard provides a summary of the account, current balance and navigation to deposit, withdrawal and transaction history pages. Account data must be loaded from the backend for the authenticated user.
+13.3 Deposit
+The deposit module accepts a positive numeric amount. The backend validates the amount, updates the account balance and creates a transaction record. A success message is displayed only after the database operation succeeds.
+13.4 Withdrawal
+The withdrawal module accepts a positive amount and checks that the account has enough available funds. If the amount is invalid or the balance is insufficient, the request is rejected and the balance remains unchanged.
+13.5 Transaction History
+This module lists previous deposits and withdrawals with the transaction type, amount, date and status. Users should only be able to view transactions belonging to their own account.
+14. SYSTEM WORKFLOW
+4. The user opens the application in a web browser.
+5. The user registers or logs in.
+6. The frontend sends the form data to the backend API.
+7. The backend validates the input and checks authentication and authorisation.
+8. The backend reads or updates the database as required.
+9. The backend returns a success or error response.
+10. The frontend displays the result and refreshes the account summary or transaction list.
+15. SECURITY FEATURES
+* Use HTTPS when deployed on a server.
+* Hash passwords using a recognised password-hashing algorithm.
+* Use server-side validation for every important field.
+* Use parameterised SQL queries to reduce SQL injection risk.
+* Protect private routes with authentication and authorisation checks.
+* Do not expose database credentials, secret keys or sensitive error details.
+* Use database transactions for balance changes and transaction logging.
+* Maintain audit logs for important actions and apply rate limits to login attempts.
+* Use only fictional data for a student demonstration; never enter real banking credentials or real customer financial details.
+16. SYSTEM TESTING
+Testing checks whether the system behaves correctly for normal and invalid inputs. The following test cases can be used during development.
+Test CaseExpected ResultRegistration with valid detailsA user record is created and confirmation is displayed.Login with correct credentialsThe user is authenticated and redirected to the dashboard.Login with incorrect credentialsAccess is denied and a general error message is shown.Deposit a positive amountThe balance increases and a deposit record is created.Deposit zero or a negative amountThe request is rejected and the balance does not change.Withdraw within available balanceThe balance decreases and a withdrawal record is created.Withdraw more than available balanceThe request is rejected and the balance does not change.Open transaction historyOnly transactions for the authenticated user's account are shown.Submit incomplete formValidation feedback is displayed and no invalid record is saved.These are planned test cases. Actual results should be filled in after running the completed application.
+17. ADVANTAGES OF THE SYSTEM
+* Provides a centralised interface for basic account activities.
+* Reduces manual calculations for deposits and withdrawals.
+* Displays transaction history in an organised format.
+* Improves consistency through server-side validation.
+* Demonstrates how frontend, backend and database components work together.
+* Can be expanded with additional modules as learning progresses.
+18. LIMITATIONS
+* This is an educational prototype, not a real banking system.
+* It does not connect to actual bank accounts or payment networks.
+* Production banking requires extensive security reviews, regulatory compliance and professional infrastructure.
+* Advanced services such as fund transfers, loan processing, card management and fraud detection are outside the basic scope.
+* Availability depends on the server and database being configured and running correctly.
+19. FUTURE ENHANCEMENTS
+* Add account statements that can be exported as PDF.
+* Introduce role-based access for administrators and customers.
+* Add a secure password-reset process and multi-factor authentication.
+* Provide search and date filters for transaction history.
+* Add notifications for successful transactions.
+* Improve responsive design for mobile devices.
+* Add automated tests, backups, monitoring and deployment support.
+* Consider a formal security assessment before any real-world use.
+20. CONCLUSION
+The Bank Management System demonstrates how basic banking-related activities can be organised in a full-stack web application. The system includes user registration and login, a dashboard, deposit and withdrawal operations, and transaction history. HTML, CSS and JavaScript provide the user interface, Node.js and Express handle application logic, and a relational database stores the records.
+The project helps learners understand frontend-backend communication, API development, database relationships, validation and security principles. With further development and thorough testing, it can serve as a foundation for a more advanced banking-management demonstration. It must remain a student prototype unless it undergoes the security, compliance and operational work required for a real financial service.
+21. REFERENCES
+* MDN Web Docs - HTML, CSS and JavaScript documentation.
+* Node.js Official Documentation.
+* Express.js Official Documentation.
+* MySQL Reference Manual.
+* OWASP Foundation - Web application security guidance.
+Bank Management System Project Report  |  Page 
+
